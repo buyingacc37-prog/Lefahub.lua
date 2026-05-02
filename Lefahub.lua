@@ -47,7 +47,7 @@ do
             end
         end
     end
-    print("myst is too mystical owo")
+    print("S2M")
 end
 
 local Services = {
@@ -400,15 +400,15 @@ local function triggerClosestUnlock(yLevel, maxY)
 end
 
 local Theme = {
-    Background      = Color3.fromRGB(18,15,8),
-    Surface         = Color3.fromRGB(22, 22, 30),
-    SurfaceHighlight= Color3.fromRGB(35, 35, 45),
-    Accent1         = Color3.fromRGB(255,210,60),
-    Accent2         = Color3.fromRGB(220,160,20),
+    Background      = Color3.fromRGB(25, 25, 25),
+    Surface         = Color3.fromRGB(35, 35, 35),
+    SurfaceHighlight= Color3.fromRGB(50, 50, 50),
+    Accent1         = Color3.fromRGB(220, 220, 220),
+    Accent2         = Color3.fromRGB(170, 170, 170),
     TextPrimary     = Color3.fromRGB(240, 240, 240),
-    TextSecondary   = Color3.fromRGB(140, 140, 150),
-    Success         = Color3.fromRGB(30, 150, 90),
-    Error           = Color3.fromRGB(255, 60, 80),
+    TextSecondary   = Color3.fromRGB(160, 160, 160),
+    Success         = Color3.fromRGB(100, 160, 100),
+    Error           = Color3.fromRGB(200, 80, 80),
 }
 
 local PRIORITY_LIST = {
@@ -1513,13 +1513,13 @@ task.spawn(function()
                     bStroke.Color = Theme.Accent1; bStroke.Thickness = 1; bStroke.Transparency = 1
 
                     local MUT_COLORS_UI = {
-                        Cursed=Color3.fromRGB(200,0,0), Gold=Color3.fromRGB(255,215,0),
-                        Diamond=Color3.fromRGB(0,255,255), YinYang=Color3.fromRGB(220,220,220),
-                        Rainbow=Color3.fromRGB(255,100,200), Lava=Color3.fromRGB(255,100,20),
-                        Candy=Color3.fromRGB(255,105,180), Divine=Color3.fromRGB(255,255,255)
+                        Cursed=Color3.fromRGB(190,190,190), Gold=Color3.fromRGB(220,220,220),
+                        Diamond=Color3.fromRGB(230,230,230), YinYang=Color3.fromRGB(210,210,210),
+                        Rainbow=Color3.fromRGB(200,200,200), Lava=Color3.fromRGB(200,200,200),
+                        Candy=Color3.fromRGB(210,210,210), Divine=Color3.fromRGB(240,240,240)
                     }
                     local hasMut = petData.mutation and petData.mutation ~= "None"
-                    local barCol = hasMut and (MUT_COLORS_UI[petData.mutation] or Color3.fromRGB(210,130,255)) or Theme.Accent2
+                    local barCol = hasMut and (MUT_COLORS_UI[petData.mutation] or Color3.fromRGB(180,180,180)) or Theme.Accent2
                     local itemBar = Instance.new("Frame", btn)
                     itemBar.Size = UDim2.new(0,3,1,-8); itemBar.Position = UDim2.new(0,3,0,4)
                     itemBar.BackgroundColor3 = barCol; itemBar.BorderSizePixel = 0
@@ -2175,22 +2175,22 @@ task.spawn(function()
         local ownerPlayer = ownerUsername and Players:FindFirstChild(ownerUsername) or nil
         local isInDuel = ownerPlayer and ownerPlayer:GetAttribute("__duels_block_steal") == true or false
         local duelStatusText = isInDuel and "IN DUEL" or "NOT IN DUEL"
-        local duelStatusColor = isInDuel and Color3.fromRGB(255, 0, 0) or Color3.fromRGB(0, 255, 0)
+        local duelStatusColor = isInDuel and Color3.fromRGB(180, 180, 180) or Color3.fromRGB(220, 220, 220)
         
         local mutationColors = {
-            ["rainbow"] = Color3.fromRGB(255, 0, 255),
-            ["bloodrot"] = Color3.fromRGB(139, 0, 0),
-            ["candy"] = Color3.fromRGB(255, 105, 180),
-            ["radioactive"] = Color3.fromRGB(0, 255, 0),
-            ["cursed"] = Color3.fromRGB(255, 50, 50),
-            ["gold"] = Color3.fromRGB(255, 215, 0),
-            ["diamond"] = Color3.fromRGB(0, 255, 255),
-            ["yinyang"] = Color3.fromRGB(255, 255, 255),
-            ["lava"] = Color3.fromRGB(255, 100, 20)
+            ["rainbow"] = Color3.fromRGB(210, 210, 210),
+            ["bloodrot"] = Color3.fromRGB(180, 180, 180),
+            ["candy"] = Color3.fromRGB(210, 210, 210),
+            ["radioactive"] = Color3.fromRGB(200, 200, 200),
+            ["cursed"] = Color3.fromRGB(190, 190, 190),
+            ["gold"] = Color3.fromRGB(220, 220, 220),
+            ["diamond"] = Color3.fromRGB(230, 230, 230),
+            ["yinyang"] = Color3.fromRGB(240, 240, 240),
+            ["lava"] = Color3.fromRGB(200, 200, 200)
         }
         
         local normalizedMutation = mutation and mutation:gsub("%s+", ""):lower() or ""
-        local color = mutationColors[normalizedMutation] or Color3.fromRGB(0, 170, 255)
+        local color = mutationColors[normalizedMutation] or Color3.fromRGB(200, 200, 200)
         
         local existing = PlayerGui:FindFirstChild("XiPriorityAlert")
         if existing then existing:Destroy() end
@@ -2565,10 +2565,10 @@ task.spawn(function()
             currentBeam.Enabled = true
 
             local MUT_COLORS_TRACE = {
-                Cursed=Color3.fromRGB(200,0,0), Gold=Color3.fromRGB(255,215,0),
-                Diamond=Color3.fromRGB(0,255,255), YinYang=Color3.fromRGB(220,220,220),
-                Rainbow=Color3.fromRGB(255,100,200), Lava=Color3.fromRGB(255,100,20),
-                Candy=Color3.fromRGB(255,105,180), Divine=Color3.fromRGB(255,255,255)
+                Cursed=Color3.fromRGB(190,190,190), Gold=Color3.fromRGB(220,220,220),
+                Diamond=Color3.fromRGB(230,230,230), YinYang=Color3.fromRGB(210,210,210),
+                Rainbow=Color3.fromRGB(200,200,200), Lava=Color3.fromRGB(200,200,200),
+                Candy=Color3.fromRGB(210,210,210), Divine=Color3.fromRGB(240,240,240)
             }
             local col = Theme.Accent2
             if not Config.LineToBase then
@@ -4475,40 +4475,6 @@ bBindClone.MouseButton1Click:Connect(function()
     end)
 end)
 
-CreateSectionHeader("CARPET SPEED")
-local rCarpetBind = CreateRow("Carpet Speed Keybind")
-local bCarpet = Instance.new("TextButton", rCarpetBind)
-bCarpet.Size=UDim2.new(0,60,0,24); bCarpet.Position=UDim2.new(1,-70,0.5,-12)
-bCarpet.BackgroundColor3=Theme.SurfaceHighlight; bCarpet.Text=Config.TpSettings.CarpetSpeedKey
-bCarpet.Font=Enum.Font.GothamBold; bCarpet.TextColor3=Theme.TextPrimary; bCarpet.TextSize=12
-Instance.new("UICorner",bCarpet).CornerRadius=UDim.new(0,4)
-bCarpet.MouseButton1Click:Connect(function()
-    bCarpet.Text="..."; bCarpet.TextColor3=Theme.Accent1
-    local con; con=UserInputService.InputBegan:Connect(function(inp)
-        if inp.UserInputType==Enum.UserInputType.Keyboard then
-            Config.TpSettings.CarpetSpeedKey=inp.KeyCode.Name; bCarpet.Text=inp.KeyCode.Name
-            bCarpet.TextColor3=Theme.TextPrimary; SaveConfig(); con:Disconnect()
-            ShowNotification("CARPET SPEED KEYBIND", inp.KeyCode.Name)
-        end
-    end)
-end)
-
-local rRagdollSelf = CreateRow("Ragdoll Self Keybind")
-local bRagdollSelf = Instance.new("TextButton", rRagdollSelf)
-bRagdollSelf.Size=UDim2.new(0,60,0,24); bRagdollSelf.Position=UDim2.new(1,-70,0.5,-12)
-bRagdollSelf.BackgroundColor3=Theme.SurfaceHighlight; bRagdollSelf.Text=Config.RagdollSelfKey ~= "" and Config.RagdollSelfKey or "NONE"
-bRagdollSelf.Font=Enum.Font.GothamBold; bRagdollSelf.TextColor3=Theme.TextPrimary; bRagdollSelf.TextSize=12
-Instance.new("UICorner",bRagdollSelf).CornerRadius=UDim.new(0,4)
-bRagdollSelf.MouseButton1Click:Connect(function()
-    bRagdollSelf.Text="..."; bRagdollSelf.TextColor3=Theme.Accent1
-    local con; con=UserInputService.InputBegan:Connect(function(inp)
-        if inp.UserInputType==Enum.UserInputType.Keyboard then
-            Config.RagdollSelfKey=inp.KeyCode.Name; bRagdollSelf.Text=inp.KeyCode.Name
-            bRagdollSelf.TextColor3=Theme.TextPrimary; SaveConfig(); con:Disconnect()
-            ShowNotification("RAGDOLL SELF KEYBIND", inp.KeyCode.Name)
-        end
-    end)
-end)
 
 local rCarpetStatus = CreateRow("Carpet Speed Status")
 local carpetStatusLbl = Instance.new("TextLabel", rCarpetStatus)
@@ -4585,27 +4551,6 @@ CreateToggleSwitch(rShowUnlockHUD, Config.ShowUnlockButtonsHUD, function(ns, set
     end
 end)
 CreateSectionHeader("ANTI-RAGDOLL")
-local arV1SetRef, arV2SetRef = {}, {}
-local rAr = CreateRow("V1")
-CreateToggleSwitch(rAr, Config.AntiRagdoll > 0, function(ns, set)
-    arV1SetRef.fn = set
-    if ns and Config.AntiRagdollV2 then
-        set(false)
-        ShowNotification("ANTI-RAGDOLL", "DISABLE V2 FIRST")
-        return
-    end
-    set(ns)
-    local mode = ns and 1 or 0
-    Config.AntiRagdoll = mode
-    if ns then
-        Config.AntiRagdollV2 = false
-        if arV2SetRef.fn then arV2SetRef.fn(false) end
-    end
-    SaveConfig()
-    startAntiRagdoll(mode)
-    if ns then startAntiRagdollV2(false) end
-    ShowNotification("ANTI-RAGDOLL V1", ns and "ENABLED" or "DISABLED")
-end)
 local rArV2 = CreateRow("V2")
 CreateToggleSwitch(rArV2, Config.AntiRagdollV2, function(ns, set)
     arV2SetRef.fn = set
@@ -4804,46 +4749,6 @@ CreateToggleSwitch(rAutoKick, Config.AutoKickOnSteal, function(ns, set)
     ShowNotification("AUTO-KICK ON STEAL", ns and "ENABLED" or "DISABLED")
 end)
 
-CreateSectionHeader("HIDE GUIS")
-local rHideAdminPanel = CreateRow("Hide Admin Panel GUI")
-CreateToggleSwitch(rHideAdminPanel, Config.HideAdminPanel, function(ns, set)
-    set(ns); Config.HideAdminPanel = ns; SaveConfig()
-    local adUI = PlayerGui:FindFirstChild("XiAdminPanel")
-    if adUI then adUI.Enabled = not ns end
-    ShowNotification("HIDE ADMIN PANEL", ns and "ENABLED" or "DISABLED")
-end)
-local rHideAutoSteal = CreateRow("Hide Auto Steal GUI")
-CreateToggleSwitch(rHideAutoSteal, Config.HideAutoSteal, function(ns, set)
-    set(ns); Config.HideAutoSteal = ns; SaveConfig()
-    local asUI = PlayerGui:FindFirstChild("AutoStealUI")
-    if asUI then asUI.Enabled = not ns end
-    ShowNotification("HIDE AUTO STEAL", ns and "ENABLED" or "DISABLED")
-end)
-local rCompactAutoSteal = CreateRow("Compact Auto Steal GUI")
-CreateToggleSwitch(rCompactAutoSteal, Config.CompactAutoSteal, function(ns, set)
-    set(ns); Config.CompactAutoSteal = ns; SaveConfig()
-    local asUI = PlayerGui:FindFirstChild("AutoStealUI")
-    if asUI and asUI:FindFirstChild("Frame") then
-        local frame = asUI.Frame
-        local mobileScale = IS_MOBILE and 0.6 or 1
-        local targetHeight = ns and (5 * 44 + 135) or (630 * mobileScale)
-        
-        local tween = TweenService:Create(
-            frame,
-            TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
-            {Size = UDim2.new(frame.Size.X.Scale, frame.Size.X.Offset, 0, targetHeight)}
-        )
-        tween:Play()
-        
-        tween.Completed:Connect(function()
-            SharedState.ListNeedsRedraw = true
-            if SharedState.UpdateAutoStealUI then
-                SharedState.UpdateAutoStealUI()
-            end
-        end)
-    end
-    ShowNotification("COMPACT AUTO STEAL", ns and "ENABLED" or "DISABLED")
-end)
 
 CreateSectionHeader("EXTRAS")   
 
@@ -5580,16 +5485,16 @@ task.spawn(function()
     local brainrotBillboards = {}
     local hiddenOverheads = {}
     local MUT_COLORS = {
-        Cursed = Color3.fromRGB(255, 50, 50),
-        Gold = Color3.fromRGB(255, 215, 0),
-        Diamond = Color3.fromRGB(0, 255, 255),
-        YinYang = Color3.fromRGB(220, 220, 220),
-        Rainbow = Color3.fromRGB(255, 100, 200),
-        Lava = Color3.fromRGB(255, 100, 20),
-        Candy = Color3.fromRGB(255, 105, 180),
-        Bloodrot = Color3.fromRGB(139, 0, 0),
-        Radioactive = Color3.fromRGB(0, 255, 0),
-        Divine = Color3.fromRGB(255, 255, 255)
+        Cursed = Color3.fromRGB(190, 190, 190),
+        Gold = Color3.fromRGB(220, 220, 220),
+        Diamond = Color3.fromRGB(230, 230, 230),
+        YinYang = Color3.fromRGB(210, 210, 210),
+        Rainbow = Color3.fromRGB(200, 200, 200),
+        Lava = Color3.fromRGB(200, 200, 200),
+        Candy = Color3.fromRGB(210, 210, 210),
+        Bloodrot = Color3.fromRGB(180, 180, 180),
+        Radioactive = Color3.fromRGB(200, 200, 200),
+        Divine = Color3.fromRGB(240, 240, 240)
     }
     
     local function createBrainrotBillboard(data)
@@ -5602,7 +5507,7 @@ task.spawn(function()
         bb.MaxDistance = 3000
         
         local hasMut = data.mutation and data.mutation ~= "None" and data.mutation ~= "N/A"
-        local color = hasMut and (MUT_COLORS[data.mutation] or Color3.fromRGB(200, 100, 255)) or Color3.fromRGB(0, 255, 150)
+        local color = hasMut and (MUT_COLORS[data.mutation] or Color3.fromRGB(180, 180, 180)) or Color3.fromRGB(200, 200, 200)
         
         local container = Instance.new("Frame", bb)
         container.Size = UDim2.new(1, 0, 1, 0)
@@ -6681,11 +6586,11 @@ task.spawn(function()
     if PlayerGui:FindFirstChild("XiStatusHUD") then PlayerGui.XiStatusHUD:Destroy() end
 
     local HTheme = {
-        Background = Color3.fromRGB(18,15,8),
-        Accent1 = Color3.fromRGB(255,210,60),
-        Accent2 = Color3.fromRGB(220,160,20),
-        White   = Color3.fromRGB(235,235,245),
-        Gray    = Color3.fromRGB(130,130,145),
+        Background = Color3.fromRGB(25, 25, 25),
+        Accent1 = Color3.fromRGB(220, 220, 220),
+        Accent2 = Color3.fromRGB(170, 170, 170),
+        White   = Color3.fromRGB(240, 240, 240),
+        Gray    = Color3.fromRGB(150, 150, 150),
     }
 
     local SCALE = 1
@@ -6757,9 +6662,9 @@ task.spawn(function()
 
     local title = Instance.new("TextLabel", topBar)
     if privateBuild then
-        title.Text = "MYSTICALHUB PRIVATE"
+        title.Text = "s2mHub PRIVATE"
     else
-        title.Text = "MYSTICALHUB"
+        title.Text = "s2mHub"
     end
     title.Font = Enum.Font.GothamBlack
     title.TextSize = 20*SCALE
@@ -6811,7 +6716,7 @@ task.spawn(function()
     if privateBuild then
         author.Text = ""
     else
-        author.Text = "discord.gg/mysticalhub"
+        author.Text = "https://discord.gg/H7RezzUc7B"
     end
     author.Font = Enum.Font.GothamBold
     author.TextSize = 12*SCALE
@@ -7757,13 +7662,13 @@ end
 
 task.spawn(function()
     local HTheme = {
-        Background = Color3.fromRGB(15,17,22),
-        Accent1 = Color3.fromRGB(0,225,255),
-        Accent2 = Color3.fromRGB(170,0,255),
-        White   = Color3.fromRGB(235,235,245),
-        Gray    = Color3.fromRGB(130,130,145),
-        Success = Color3.fromRGB(30, 150, 90),
-        Error   = Color3.fromRGB(255, 60, 80)
+        Background = Color3.fromRGB(25, 25, 25),
+        Accent1 = Color3.fromRGB(220, 220, 220),
+        Accent2 = Color3.fromRGB(170, 170, 170),
+        White   = Color3.fromRGB(240, 240, 240),
+        Gray    = Color3.fromRGB(150, 150, 150),
+        Success = Color3.fromRGB(100, 160, 100),
+        Error   = Color3.fromRGB(200, 80, 80)
     }
 
     local SCALE = IS_MOBILE and 0.65 or 1
@@ -8010,13 +7915,13 @@ task.spawn(function()
         pcall(function() raknet.remove_send_hook(rakhook) end)
     end
 
-    local GOLD   = Color3.fromRGB(255, 210, 60)
-    local DARK   = Color3.fromRGB(18, 15, 8)
-    local SURF   = Color3.fromRGB(22, 22, 30)
-    local HIGH   = Color3.fromRGB(35, 35, 45)
-    local ACCENT = Color3.fromRGB(220, 160, 20)
+    local GOLD   = Color3.fromRGB(220, 220, 220)
+    local DARK   = Color3.fromRGB(25, 25, 25)
+    local SURF   = Color3.fromRGB(35, 35, 35)
+    local HIGH   = Color3.fromRGB(50, 50, 50)
+    local ACCENT = Color3.fromRGB(170, 170, 170)
     local TEXT   = Color3.fromRGB(240, 240, 240)
-    local GRAY   = Color3.fromRGB(140, 140, 150)
+    local GRAY   = Color3.fromRGB(150, 150, 150)
 
     local desyncGui = Instance.new("ScreenGui")
     desyncGui.Name = "MystDesyncPanel"
